@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 ##cacheSolve actually computes an inverted matrix and stores it (IF it
-##doesn't find a result that already exists)
+##doesn't find an inverse matrix that already exists)
 ##makeCacheMatrix enables the storage and retrieval so the inverted matrix
 ##doesn't have to be recalculated each time
 #--Together, they demonstrate lexical scoping (If a variable is not defined
@@ -14,7 +14,7 @@
 makeCacheMatrix <- function(x = matrix()) {
   inv_mx <- NULL
 #--set is the reset function. It replaces the initial matrix
-#--and nulls out the inverse matrix so it will recalc
+#--and nulls out the inverse matrix so it will recalculate
   set <- function(y) {
     x <<- y
     inv_mx <<- NULL
@@ -51,5 +51,6 @@ cacheSolve <- function(x, ...) {
   inv_mx <- solve(input_matrix)
 #--this line puts that result into storage
   x$set_im(inv_mx)
+#--finally, output the inverse matrix for the user
   inv_mx
 }
