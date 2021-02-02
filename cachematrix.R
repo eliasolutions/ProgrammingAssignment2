@@ -50,6 +50,6 @@ cacheSolve <- function(x, ...) {
 #--here's the line that performs the calculation
   inv_mx <- solve(input_matrix)
 #--this line puts that result into storage
-  x$setim(inv_mx)
+  x$set_im(inv_mx)
   inv_mx
 }
